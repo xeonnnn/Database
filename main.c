@@ -4,18 +4,18 @@
 
 #define MAX_STUDENTS 100
 
-// Structure to store student information
+
 struct Student {
     int id;
     char name[50];
     float marks;
 };
 
-// Global array to store students
+
 struct Student students[MAX_STUDENTS];
 int studentCount = 0;
 
-// Function to add a student
+
 void addStudent() {
     if (studentCount >= MAX_STUDENTS) {
         printf("Student limit reached!\n");
@@ -26,9 +26,9 @@ void addStudent() {
     printf("Enter student ID: ");
     scanf("%d", &s.id);
     printf("Enter student name: ");
-    getchar(); // To consume the newline character left by scanf
+    getchar(); 
     fgets(s.name, 50, stdin);
-    s.name[strcspn(s.name, "\n")] = '\0'; // Remove trailing newline
+    s.name[strcspn(s.name, "\n")] = '\0'; 
     printf("Enter student marks: ");
     scanf("%f", &s.marks);
 
@@ -36,7 +36,7 @@ void addStudent() {
     printf("Student added successfully!\n");
 }
 
-// Function to display all students
+
 void displayStudents() {
     if (studentCount == 0) {
         printf("No students to display.\n");
@@ -52,7 +52,7 @@ void displayStudents() {
     printf("\n");
 }
 
-// Function to save students to a file
+
 void saveToFile() {
     FILE *file = fopen("students.txt", "w");
     if (file == NULL) {
@@ -68,7 +68,7 @@ void saveToFile() {
     printf("Students saved to file successfully!\n");
 }
 
-// Main function
+
 int main() {
     int choice;
 
